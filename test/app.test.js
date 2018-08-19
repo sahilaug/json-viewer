@@ -1,7 +1,7 @@
 import { readFileAsArray, readFileAsArrayUsingPromise } from "../src/app.js";
 
 // Story1
-test("it returns data as it is ", async () => {
+test("it returns data from the stream as it is ", async () => {
   const str = await readFileAsArrayUsingPromise("./samples/sample.json");
   expect(str).toBe(
     "{name: 'sahil', city: 'bangalore', age: '28', address: { state: 'karnataka'}}"
@@ -37,3 +37,16 @@ test("it should prettify the JSON with identations", async () => {
   "name": "sahil"
 }`);
 });
+
+// Story 4
+// test("it should print pretty JSON with identations AND linenumbers", async () => {
+//   const makePretty = true;
+//   const withLineNumbers = true;
+//   const str = await readFileAsArrayUsingPromise("./samples/sample1.json", {
+//     makePretty,
+//     withLineNumbers
+//   });
+//   expect(str).toBe(`{
+//   "name": "sahil"
+// }`);
+// });
